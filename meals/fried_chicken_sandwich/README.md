@@ -1,4 +1,4 @@
-#Fried Chicken Sandwich
+#Gluten Free Fried Chicken Sandwich
 This is a fairly easy thing to make but it does make a lot of mess and requires some hardware that not everyone will have.
 
 ##Additional Stats
