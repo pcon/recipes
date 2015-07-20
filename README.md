@@ -5,4 +5,4 @@ Recipes I've come up with over the years
 [Garlic Pretzels](snacks/garlic_pretzels/)
 
 #Meals
-[Fried Chicken Sandwich](meals/fried_chicken_sandwich) GF
+[Gluten Free Fried Chicken Sandwich](meals/fried_chicken_sandwich) [Gluten Free]
