@@ -1,15 +1,15 @@
-#Sausage Cheese Grits
+# Sausage Cheese Grits
 A family favorite for the holidays. Reheats great!
 
-##Additional Stats
+## Additional Stats
 * Gluten Free
 
-##Hardware
+## Hardware
 * 2qt pot / pan
 * Skillet
 * 8" Casserole dish
 
-##Software
+## Software
 * Water (4 cups)
 * Sharp Chedder Cheese (3 cups)
 * Milk (1/4 cup)
@@ -20,11 +20,11 @@ A family favorite for the holidays. Reheats great!
 * Garlic Salt (1-1/2 tsp)
 * Hot Sausage (1 lb)
 
-##Preparation
+## Preparation
 1. Beat egg
 2. Brown sausage
 
-##Cooking (day before)
+## Cooking (day before)
 1. Cook grits according to directions on package
 2. Combine grits with 2 cups of cheese, milk, butter, worcestershire and garlic
 3. Stir until cheese is melted
@@ -35,7 +35,7 @@ A family favorite for the holidays. Reheats great!
 8. Cover sausage with remaining grit mixture
 9. Chill for 8+ hours
 
-##Cooking (day of)
+## Cooking (day of)
 1. Preheat oven to 350
 2. Let casserole stand at room temperature for 30 minutes
 3. Bake for 40 minutes
