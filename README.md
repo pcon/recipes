@@ -3,6 +3,7 @@ Recipes I've come up with over the years
 
 # Snacks
 * [Garlic Pretzels](snacks/garlic_pretzels/)
+* [Sausage Balls](snacks/sausage_balls/) [Gluten Free]
 
 # Meals
 * [Beef Burgundy](meals/beef_burgundy) [Gluten Free] [Slow Cooker]
