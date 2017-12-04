@@ -11,5 +11,8 @@ Recipes I've come up with over the years
 * [Mountain Man](meals/mountain_man) [Gluten Free]
 * [Taco Soup](meals/taco_soup) [Gluten Free]
 
+# Sides
+* [Garlic Cheese Biscuits](sides/garlic_cheese_biscuits/) [Gluten Free]
+
 # Desserts
 * [Cobbler](meals/cobbler)
