@@ -1,0 +1,12 @@
+language: node_js
+cache: npm
+before_script:
+     - npm install -g gulp-cli
+script: gulp deploy
+deploy:
+     provider: pages
+     skip-cleanup: true
+     github-token: $GITHUB_TOKEN
+     keep-history: true
+     on:
+          branch: master
