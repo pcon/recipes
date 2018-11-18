@@ -13,7 +13,8 @@
     "gulp-rename": "*",
     "gulp-rimraf": "*",
     "gulp-wrap": "*",
-    "merge-stream": "*"
+    "merge-stream": "*",
+    "yargs": "^12.0.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
