@@ -118,5 +118,5 @@ gulp.task('dist', ['default']);
 gulp.task('deploy', ['dist'], function (cb) {
     'use strict';
 
-    ghpages.publish(path.join(process.cwd(), 'dist'), cb);
+    ghpages.publish(path.join(process.cwd(), 'dist'), {push: false}, cb);
 });
