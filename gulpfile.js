@@ -115,7 +115,12 @@ gulp.task('watch', ['default'], function () {
 
 gulp.task('dist', ['default']);
 
-gulp.task('deploy', ['dist'], function (cb) {
+gulp.task('cleandeploy', [], function () {
+    return gulp.src('node_modules/gh-pages/.cache')
+        .pipe(rimraf());
+});
+
+gulp.task('deploy', ['cleandeploy', 'dist'], function (cb) {
     'use strict';
 
     ghpages.publish(path.join(process.cwd(), 'dist'), {repo: 'https://' + process.env.GITHUB_TOKEN + '@github.com/pcon/recipes.git', silent: false}, cb);
