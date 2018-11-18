@@ -3,7 +3,7 @@
 
 var argv = require('yargs').argv,
     connect = require('gulp-connect'),
-    deploy = require('gulp-gh-pages'),
+    ghpages = require('gh-pages'),
     fs = require('fs'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
@@ -115,9 +115,8 @@ gulp.task('watch', ['default'], function () {
 
 gulp.task('dist', ['default']);
 
-gulp.task('deploy', ['dist'], function () {
+gulp.task('deploy', ['dist'], function (cb) {
     'use strict';
 
-    return gulp.src('./dist/**/*')
-        .pipe(deploy());
+    ghpages.publish(path.join(process.cwd(), 'dist'), cb);
 });
