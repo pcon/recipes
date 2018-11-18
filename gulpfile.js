@@ -118,5 +118,5 @@ gulp.task('dist', ['default']);
 gulp.task('deploy', ['dist'], function (cb) {
     'use strict';
 
-    ghpages.publish(path.join(process.cwd(), 'dist'), {repo: 'https://' + process.env.GITHUB_TOKEN + '@github.com/pcon/recipes.git', silent: true}, cb);
+    ghpages.publish(path.join(process.cwd(), 'dist'), {repo: 'https://' + process.env.GITHUB_TOKEN + '@github.com/pcon/recipes.git', silent: false}, cb);
 });
