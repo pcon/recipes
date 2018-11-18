@@ -4,17 +4,16 @@
   "description": "A collection of recipes",
   "main": "gulpfile.js",
   "dependencies": {
+    "gh-pages": "*",
     "gulp": "*",
     "gulp-connect": "*",
-    "gh-pages": "*",
     "gulp-htmlmin": "*",
     "gulp-if": "*",
     "gulp-markdown": "*",
     "gulp-rename": "*",
     "gulp-rimraf": "*",
     "gulp-wrap": "*",
-    "merge-stream": "*",
-    "yargs": "*"
+    "merge-stream": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
