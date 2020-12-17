@@ -25,3 +25,4 @@ Recipes I've come up with over the years
 
 * [Cobbler](desserts/cobbler) \[Gluten Free\]
 * [Key Lime Pie](desserts/key_lime_pie) \[Gluten Free\]
+* [Molasses Cookies](desserts/molasses_cookies) \[Gluten Free\]
