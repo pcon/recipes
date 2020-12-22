@@ -17,7 +17,7 @@
 * Molasses (1/3 cup)
 * Gluten free flour (2 cup)
 * Baking soda (2 tsp)
-* Salt (2 tsp)
+* Salt (1/2 tsp)
 * Cinnamon (1 tsp)
 * Ginger (1 tsp)
 
