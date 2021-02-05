@@ -9,7 +9,7 @@ This is a really super easy thing to make and requires almost no hardware
 ## Hardware
 
 * Baking sheet
-* Large bowl _[Optional]_
+* Large bowl _\[Optional\]_
 
 ## Software
 
@@ -25,7 +25,7 @@ This is a really super easy thing to make and requires almost no hardware
 1. In a measuring cup, combine oil and all seasonings.  Stir well
 2. Break pretzels into bite sized pieces and place in bowl
 3. Mix seasoning oil and pretzels until coated
- * You can mix the pretzels and oil mixture directly on the pan but it's a little tricky
+* You can mix the pretzels and oil mixture directly on the pan but it's a little tricky
 
 ## Cooking
 

@@ -4,20 +4,38 @@
   "description": "A collection of recipes",
   "main": "gulpfile.js",
   "dependencies": {
-    "gh-pages": "*",
-    "gulp": "*",
-    "gulp-connect": "*",
-    "gulp-htmlmin": "*",
-    "gulp-if": "*",
-    "gulp-markdown": "*",
-    "gulp-rename": "*",
-    "gulp-rimraf": "*",
-    "gulp-wrap": "*",
-    "merge-stream": "*",
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-markdown": "^5.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-rimraf": "^1.0.0",
+    "gulp-wrap": "^0.15.0",
+    "merge-stream": "^2.0.0",
     "yargs": "^12.0.4"
   },
   "scripts": {
+    "lint-style": "stylelint site/assets/styles",
+    "lint-js": "eslint gulpfile.js",
+    "lint-md": "remark --silently-ignore --no-stdout -f **/**/*.md",
+    "lint": "npm run lint-js && npm run lint-md && npm run lint-style",
+    "build": "gulp default",
+    "watch": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended",
+      [
+        "remark-lint-final-newline",
+        false
+      ],
+      [
+        "lint-list-item-indent",
+        "space"
+      ]
+    ]
   },
   "repository": {
     "type": "git",
@@ -28,5 +46,13 @@
   "bugs": {
     "url": "https://github.com/pcon/recipes/issues"
   },
-  "homepage": "https://github.com/pcon/recipes#readme"
+  "homepage": "https://github.com/pcon/recipes#readme",
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "remark": "^13.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-lint": "^8.0.0",
+    "remark-preset-lint-recommended": "^5.0.0",
+    "stylelint": "^13.9.0"
+  }
 }

@@ -19,7 +19,7 @@ A family favorite for the holidays. Reheats great!
 * Milk (1/4 cup)
 * Butter (2 tbsp)
 * Egg (1)
-* Quick Grits [Cooked] (1 cup)
+* Quick Grits \[Cooked\] (1 cup)
 * Worcestershire sauce (2 tsp)
 * Garlic Salt (1-1/2 tsp)
 * Hot Sausage (1 lb)

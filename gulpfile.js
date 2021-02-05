@@ -1,27 +1,28 @@
-/*jslint browser: true, regexp: true, nomen: true */
-/*global require */
+const argv = require('yargs').argv;
+const connect = require('gulp-connect');
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const htmlmin = require('gulp-htmlmin');
+const marked = require('gulp-markdown');
+const wrap = require('gulp-wrap');
+const merge = require('merge-stream');
+const rename = require('gulp-rename');
+const rimraf = require('gulp-rimraf');
+const path = require('path');
 
-var argv = require('yargs').argv,
-    connect = require('gulp-connect'),
-    ghpages = require('gh-pages'),
-    fs = require('fs'),
-    gulp = require('gulp'),
-    gulpif = require('gulp-if'),
-    htmlmin = require('gulp-htmlmin'),
-    marked = require('gulp-markdown'),
-    wrap = require('gulp-wrap'),
-    merge = require('merge-stream'),
-    path = require('path'),
-    rename = require('gulp-rename'),
-    rimraf = require('gulp-rimraf');
+const DIST = 'dist';
+const DIST_HTML = path.join(DIST, '*.html');
+const DIST_STYLES = path.join(DIST, 'styles');
+const MATCHER_MD = './**/*.md';
+const MATCHER_STYLES = 'site/assets/styles/**';
 
 /**
 * Debug mode may be set in one of these manners:
 * - gulp --debug=[true | false]
 * - export NODE_DEBUG=[true | false]
 */
-var DEBUG,
-    USER_DEBUG = (argv.debug || process.env.NODE_DEBUG);
+var DEBUG;
+var USER_DEBUG = argv.debug || process.env.NODE_DEBUG;
 
 if (USER_DEBUG === undefined && argv._.indexOf('deploy') > -1) {
     DEBUG = false;
@@ -30,36 +31,81 @@ if (USER_DEBUG === undefined && argv._.indexOf('deploy') > -1) {
 }
 
 var site = {
-    'title': 'Recipes',
-    'url': 'http://0.0.0.0:9000',
-    'urlRoot': '/',
-    'author': 'Patrick Connelly',
-    'email': 'patrick@deadlypenguin.com',
-    'time': new Date()
+    title: 'Recipes',
+    url: 'http://0.0.0.0:9000',
+    urlRoot: '/',
+    author: 'Patrick Connelly',
+    email: 'patrick@deadlypenguin.com',
+    time: new Date()
 };
 
 if (process.env.URL_ROOT) {
     site.urlRoot = process.env.URL_ROOT;
 }
 
-gulp.task('cleanpages', function () {
-    'use strict';
+/**
+ * Remove a path
+ * @param {String} rm_path The path matcher
+ * @returns {Promise} A promise for when the path has been removed
+ */
+function remove(rm_path) {
+    const config = {
+        read: false,
+        allowEmpty: true
+    };
 
-    return gulp.src(['dist/*.html'], {read: false})
+    return gulp.src(rm_path, config)
         .pipe(rimraf());
-});
+}
 
-gulp.task('pages', ['cleanpages'], function () {
-    'use strict';
+/**
+ * Cleans up the dist directory
+ * @returns {Promise} A promise for when the dist directory has been cleaned
+ */
+function cleanall() {
+    return remove(DIST);
+}
 
-    var markdown;
+/**
+ * Cleans the html pages
+ * @returns {Promise} A promise for when the HTML has been cleaned
+ */
+function cleanpages() {
+    return remove(DIST_HTML);
+}
 
-    markdown = gulp.src(['./**/*.md', '!node_modules{,/**}'], {base: '.'})
+/**
+ * Cleans the styles
+ * @returns {Promise} A promise for when the styles have been cleaned
+ */
+function cleanstyles() {
+    return remove(DIST_STYLES);
+}
+
+/**
+ * Builds the html pages
+ * @returns {Promise} The promise for when the HTML has been generated
+ */
+function buildpages() {
+    const src_files = [
+        MATCHER_MD,
+        '!node_modules{,/**}'
+    ];
+    const src_config = { base: '.' };
+
+    const rename_config = {
+        basename: 'index',
+        extname: '.html'
+    };
+
+    const wrap_opts = { src: path.join(__dirname, '/site/assets/templates/page.html') };
+    const options = { variable: 'site' };
+
+    var markdown = gulp.src(src_files, src_config)
         .pipe(marked())
-        .pipe(rename({basename: 'index', extname: '.html'}))
-        .pipe(wrap({ src: __dirname + '/site/assets/templates/page.html' }, site, { variable: 'site' }));
+        .pipe(rename(rename_config))
+        .pipe(wrap(wrap_opts, site, options));
 
-    /*jslint unparam: true */
     return merge(markdown)
         .pipe(gulpif(!DEBUG, htmlmin({
             removeAttributeQuotes: false,
@@ -73,55 +119,37 @@ gulp.task('pages', ['cleanpages'], function () {
         })))
         .pipe(gulp.dest('dist'))
         .pipe(connect.reload());
-});
-/*jslint unparam: false */
+}
 
-gulp.task('cleanstyles', function () {
-    'use strict';
+/**
+ * Builds the styles
+ * @returns {Promise} The promise for when the styles have been generated
+ */
+function buildstyles() {
+    return gulp.src(MATCHER_STYLES)
+        .pipe(gulp.dest(DIST_STYLES));
+}
 
-    return gulp.src('dist/styles', {read: false})
-        .pipe(rimraf());
-});
-
-gulp.task('styles', ['cleanstyles'], function () {
-    'use strict';
-
-    return gulp.src('site/assets/styles/**')
-        .pipe(gulp.dest('dist/styles'));
-});
-
-gulp.task('clean', function () {
-    'use strict';
-
-    return gulp.src('dist', {read: false})
-        .pipe(rimraf());
-});
-
-gulp.task('content', ['pages']);
-gulp.task('default', ['content', 'styles']);
-
-gulp.task('watch', ['default'], function () {
-    'use strict';
-
-    gulp.watch(['site/assets/styles/**'], ['styles']);
-    gulp.watch(['./**/*.md'], ['pages']);
+/**
+ * Watches for changes
+ * @returns {undefined}
+ */
+function watch() {
+    gulp.watch(MATCHER_STYLES, gulp.task('styles'));
+    gulp.watch(MATCHER_MD, gulp.task('pages'));
 
     connect.server({
-        root: ['dist'],
+        root: [ DIST ],
         port: 9000,
         livereload: true
     });
-});
+}
 
-gulp.task('dist', ['default']);
+gulp.task('clean', cleanall);
+gulp.task('cleanpages', cleanpages);
+gulp.task('cleanstyles', cleanstyles);
+gulp.task('pages', gulp.series(cleanpages, buildpages));
+gulp.task('styles', gulp.series(cleanstyles, buildstyles));
 
-gulp.task('cleandeploy', [], function () {
-    return gulp.src('node_modules/gh-pages/.cache')
-        .pipe(rimraf());
-});
-
-gulp.task('deploy', ['cleandeploy', 'dist'], function (cb) {
-    'use strict';
-
-    ghpages.publish(path.join(process.cwd(), 'dist'), {repo: 'https://' + process.env.GITHUB_TOKEN + '@github.com/pcon/recipes.git', silent: false}, cb);
-});
+gulp.task('default', gulp.series(gulp.task('pages'), gulp.task('styles')));
+gulp.task('watch', gulp.series(gulp.task('default'), watch));

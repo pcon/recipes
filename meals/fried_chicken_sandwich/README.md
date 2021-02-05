@@ -25,14 +25,14 @@ This recipe is a bit looser than most of my other ones.  I typically eyeball it 
 * Salt (1 tbs) _(I prefer Kosher salt)_
 * Chili powder (1/2 tbs)
 * Black pepper (1 tsp)
-* Cayenne pepper (1/2 tsp) _[Optional]_
+* Cayenne pepper (1/2 tsp) _\[Optional\]_
 * Vegetable oil _(Amount depends on size of pan)_
 
 ## Preparation
 
 1. If chicken breasts are thick, cut in half
 2. Between two sheets of plastic wrap, pound chicken flat until it is roughly 1/8" thick.
-  * Optionally if you have thick chicken breasts you can cut them in half long ways and skip this.  However you're chicken peices may be a little weirdly shaped.
+* Optionally if you have thick chicken breasts you can cut them in half long ways and skip this.  However you're chicken peices may be a little weirdly shaped.
 3. Mix flour and all seasonings together in a shallow dish.  Wisk to combine evenly.
 4. Pour milk into a shallow dish
 5. Dredge chicken in the seasoning mixture making sure to get good coverage, Shake off excess mix.
@@ -48,7 +48,7 @@ This recipe is a bit looser than most of my other ones.  I typically eyeball it 
 4. Carefully place chicken in oil and fry for 3-4 minutes _(Shortly after placing in pan, wiggle the chicken a little to keep it from sticking to the bottom)_
 5. If chicken is not completely submerged flip and cook for an additional 3 minutes
 6. Remove chicken from oil and place on cooling rack
-7. [Optional] add additional salt right after it comes out of the oil
+7. \[Optional\] add additional salt right after it comes out of the oil
 
 ## Serving
 
