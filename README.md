@@ -12,14 +12,17 @@ Recipes I've come up with over the years
 * [Beef Burgundy](meals/beef_burgundy) \[Gluten Free\] \[Slow Cooker\]
 * [Beef and Broccoli](meals/beef_and_broccoli) \[Gluten Free\] \[Slow Cooker\]
 * [Chicken Protein Bowl](meals/chicken_protein_bowl) \[Gluten Free\]
+* [Greek Chicken](meals/greek_chicken) \[Gluten Free\]
 * [Gluten Free Fried Chicken Sandwich](meals/fried_chicken_sandwich) \[Gluten Free\]
 * [Mountain Man](meals/mountain_man) \[Gluten Free\]
 * [Sausage Cheese Grits](meals/sausage_cheese_grits) \[Gluten Free\]
 * [Taco Soup](meals/taco_soup) \[Gluten Free\]
+* [Teriyaki Chicken](meals/teriyaki_chicken) \[Gluten Free\]
 
 ## Sides
 
 * [Garlic Cheese Biscuits](sides/garlic_cheese_biscuits/) \[Gluten Free\]
+* [Teriyaki Sauce](sides/teriyaki_sauce) \[Gluten Free\]
 
 ## Desserts
 
