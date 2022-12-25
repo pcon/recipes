@@ -22,7 +22,7 @@ A family favorite for the holidays. Reheats great!
 * Quick Grits \[Cooked\] (1 cup)
 * Worcestershire sauce (2 tsp)
 * Garlic Salt (1-1/2 tsp)
-* Hot Breakfast Sausage.  Like Bass Farms or Jimmy Dean without a casing (1 lb)
+* Hot Breakfast Sausage \[Ground\].  Like Bass Farms or Jimmy Dean without a casing (1 lb)
 
 ## Preparation
 
